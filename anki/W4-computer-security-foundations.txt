@@ -1,0 +1,43 @@
+What was phone phreaking?	Hacking the phone system — the dominant form of hacking around 1969, before most people had home computers.	w4 history
+What famous cereal-box toy was used to hack the phone system, and how?	The Captain Crunch whistle — blown into a phone receiver, it produced a 2600 Hz tone that activated and controlled phone trunk lines.	w4 history
+What was the original connotation of the term "hacker"?	Positive — a clever experimenter who made computers do unthinkable things (games, music, graphics); the negative meaning came later.	w4 history
+Who is considered the greatest all-around hacker for designing both hardware and software (and co-founding Apple)?	Steve Wozniak	w4 history
+What low-tech technique was Kevin Mitnick famous for?	Social engineering — talking his way into places and persuading people on the phone to divulge passwords and other secrets.	w4 history
+What is the title of Kevin Mitnick's book about social engineering?	The Art of Deception	w4 history
+According to NIST, what is information security?	The protection afforded to an automated information system to preserve its confidentiality, integrity, and availability.	w4
+What three properties make up the CIA triad?	Confidentiality, Integrity, Availability	w4
+Which member of the CIA triad protects against eavesdropping and data theft?	Confidentiality	w4
+Which member of the CIA triad protects against data corruption and tampering?	Integrity	w4
+Which member of the CIA triad protects against service denial and data loss (reliability)?	Availability	w4
+Why must confidentiality, integrity, and availability be balanced rather than maximized individually?	Locking computers in a dark, unplugged room boosts confidentiality and integrity but destroys availability — a secure system needs the right amount of all three.	w4
+What does PII stand for, and what are examples?	Personally Identifiable Information — credit card numbers, bank account numbers, social security numbers.	w4
+What are examples of intellectual property that confidentiality must protect?	Source code, customer databases, technical specifications, patents, copyrights, secret formulas.	w4
+What is a masquerader?	Someone pretending to be a real user/customer — e.g., using a stolen identity or stolen username and password.	w4
+What is a Trojan horse?	Legitimate-seeming software (e.g., a PDF) that secretly carries malicious code such as a keylogger.	w4
+What integrity incident hit Apple when its iOS compiler was altered?	Attackers modified the compiler so malware was injected into iOS applications built with it.	w4
+What principle says users should be granted only the minimum access needed to do their job?	Least privilege / need-to-know	w4
+What is separation of duties?	No single employee controls a transaction from beginning to end — e.g., the person altering data isn't the one checking its accuracy.	w4
+What is rotation of duties?	Periodically changing employees' job assignments so one person isn't permanently in control of the same function.	w4
+What is a denial-of-service (DoS) attack?	An attack in which the intruder ties up a system so legitimate users cannot use it.	w4
+What is a botnet?	A network of tens or hundreds of thousands of compromised "zombie" computers controlled by an attacker to flood a target (as in DDoS).	w4
+What is a zombie computer?	A computer infected with malware that lets a malicious user remotely control it (often as part of a botnet).	w4
+Why is buying security often compared to buying insurance?	Like insurance, you pay for protection against an attack that may never happen — making it hard to know how much to spend.	w4
+Why is security usually an afterthought?	It isn't designed in from the beginning because it slows product release and is seen as an impediment to shipping quickly.	w4
+What is meant by "people are the problem" in security?	The best firewalls and cryptography fail if a user gives away a password or opens a path around protections.	w4
+Why is inserting a found USB drive into a computer so dangerous?	The drive can carry malware that immediately infects the machine (the same trick used in attacks like Stuxnet).	w4 domains
+Why do attackers often target the CEO's workstation?	The CEO typically has the highest privileges but relatively low technical skill — the "keys to the kingdom."	w4 domains
+What is Patch Tuesday and how do attackers exploit it?	The day Microsoft releases patches — attackers reverse-engineer the patches to learn the vulnerabilities and attack systems that haven't yet been patched.	w4 domains
+How can someone get onto a wired LAN without credentials?	Physically tapping into a live open network port — wired LAN access typically grants more access than wireless.	w4 domains
+What can you see on an unencrypted wireless network (e.g., a coffee shop)?	All other users' traffic in cleartext — unless they're using HTTPS, which encrypts it.	w4 domains
+What tool is used for unauthorized probing and port scanning?	nmap — it reveals what servers are open and what services they run.	w4 domains
+Why are Telnet and FTP considered insecure?	They transmit data (including login credentials) unencrypted in cleartext, enabling eavesdropping.	w4 domains
+How can a security team neutralize phishing links in emails users have already clicked?	Disable the link on the internal network so it no longer resolves to the malicious site.	w4 domains
+What is a brute-force attack on remote access, and one mitigation?	Trying every combination of user ID and password — mitigated by limiting login retries and locking out the IP after repeated failures.	w4 domains
+What US law protects student data like grades and GPAs?	FERPA — only people whose job requires it (advisor, registrar) should access a student's GPA.	w4 domains
+Why are servers requiring high availability a security threat?	They're hard to take offline to patch, so they may stay vulnerable.	w4 domains
+Which security technology is most used, and which is least used?	Most used: antivirus software. Least used: biometrics.	w4
+How do smart cards strengthen authentication?	They add a second factor (something you have) to the password, enabling two-factor authentication.	w4
+What is Stuxnet, and why is it significant?	A cyber-physical attack that crossed from digital to physical, causing actual damage to Iran's nuclear facility.	w4
+In the defender-attacker asymmetry, who has the harder job and why?	The defender — they must find and eliminate ALL exploitable vulnerabilities, while the attacker needs only ONE way in.	w4
+What is Bruce Schneier's quote about good attacks?	"A good attack is one that the engineers never thought of."	w4
+What are the three golden rules of computer security (Robert Morris)?	Do not own a computer; do not power it on; do not use it — which sacrifices the availability part of the triad.	w4

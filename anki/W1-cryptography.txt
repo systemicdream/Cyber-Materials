@@ -1,0 +1,56 @@
+What is cryptography? (literal Greek meaning)	Secret writing — the art and science of concealing meanings	crypto w1
+The unscrambled, readable input to encryption is called __________; the scrambled output is called __________.	plaintext; ciphertext	crypto w1
+What is a cryptosystem composed of?	A set of plaintexts, a set of keys, a set of ciphertexts, plus an enciphering function	crypto w1
+What is cryptanalysis?	The science of breaking codes — analyzing encrypted data and finding/correcting weaknesses in cryptographic algorithms	crypto w1
+Who is the most famous historic figure in cryptanalysis, known for cracking codes in WWII?	Alan Turing	crypto w1
+An algorithm should not rely on __________ for its security; only the __________ needs to be kept secret.	its secrecy; the key (Kerckhoffs-style principle)	crypto w1
+Why should encryption algorithms be made public for scrutiny?	More eyes on the algorithm verifies it works and builds trust; secrecy of the algorithm should not be required for security	crypto w1
+In a ciphertext-only attack, what do you have and what is the goal?	You have only the ciphertext; goal is to find the plaintext (the key may also be found along the way)	crypto w1
+In a known-plaintext attack, what do you have and what is the goal?	You have both the ciphertext and the plaintext; goal is to find the key	crypto w1
+In a chosen-plaintext attack, what do you do and what is the goal?	You choose specific plaintexts to be encrypted and receive the resulting ciphertexts; goal is to find the key by spotting patterns	crypto w1
+Why is finding the key in a known-plaintext attack valuable?	The same key likely encrypts future messages, so you can decrypt all subsequent traffic	crypto w1
+How can attacks be accomplished (two general methods)?	Math skills or statistical methods (statistical assumptions about the plaintext language are called the model)	crypto w1
+Symmetric encryption is also called __________ or __________ encryption.	single-key; classical (one key encrypts and decrypts)	crypto w1
+In symmetric encryption, how many keys are used?	One — the same key encrypts and decrypts	crypto w1
+The two categories of classical (symmetric) ciphers are __________ and __________.	transposition; substitution	crypto w1
+What does a transposition cipher do?	Rearranges the characters of the plaintext without changing them	crypto w1
+How is the rail fence cipher created?	Write the plaintext down two balanced columns (first half in column 1, second half in column 2), then read across rows one at a time	crypto w1
+How can you detect that a transposition cipher was used?	The ciphertext contains normal English letter frequencies (many E, T, A, O, I; few J, Q, X, Z) — letters were rearranged, not replaced	crypto w1
+What are the most common letters in English (in order)?	E (most common), then T, A, O, I	crypto w1
+What are the least common letters in English?	J, Q, X, Z	crypto w1
+Besides single-letter frequency, what other frequency table helps attack transposition ciphers?	Letter-pair (digram) frequencies — common pairs like TH, ER, ON, AN	crypto w1
+What does a substitution cipher do?	Replaces characters with different characters (letters are changed, not reordered)	crypto w1
+How can you tell a substitution cipher from a transposition cipher?	Substitution ciphertext has abnormal letter frequencies (letters changed); transposition has normal frequencies (letters just jumbled)	crypto w1
+In the Caesar cipher, the key is the __________.	offset (shift amount) — typically 3	crypto w1
+To decrypt a Caesar cipher with shift 3, you __________ each letter by 3.	subtract (shift back)	crypto w1
+Why was the Caesar cipher effective in its time?	Most people couldn't read, so only a small shift was needed to conceal messages	crypto w1
+How does frequency analysis break a Caesar cipher?	Compute each letter's frequency in the ciphertext, multiply by expected English frequencies, sum for each shift, and pick the shift with the highest total	crypto w1
+What is the maximum shift in a Caesar cipher?	25 (shift of 26 rotates back to the original letters)	crypto w1
+The Vigenère cipher is an improved __________ cipher that uses a __________ to vary the shift.	Caesar (substitution); keyword	crypto w1
+How does the Vigenère cipher determine each letter's shift?	Each letter of the repeating keyword gives a shift amount (A=0, B=1, ..., Z=25) — look up the intersection of the keyword letter's row and the plaintext letter's column in the Vigenère table	crypto w1
+When decrypting with Vigenère, you use the keyword letter to pick a __________ and trace down to the ciphertext letter's __________.	column; row (the row-column intersection gives the plaintext letter)	crypto w1
+What is the key weakness of the Vigenère cipher?	Repeating patterns: when the key's characters align the same way over repeated ciphertext characters, the repeated ciphertext reveals the key length (a multiple of the spacing)	crypto w1
+Does a longer or shorter Vigenère key make the cipher stronger?	Longer — it produces fewer repetitions, making the pattern harder to detect	crypto w1
+How can a substitution cipher be made stronger?	Combine substitution and transposition (encrypt with one, then encrypt the result with the other) — the basis of modern layered encryption	crypto w1
+The Nazi German cipher machine used in WWII was called the __________.	Enigma	crypto w1
+What was the critical flaw of the Enigma machine?	A letter can never be encrypted to itself (pressing K never produces K)	crypto w1
+What German habit helped the Allies crack Enigma?	Reusing phrases in messages (e.g., weather reports always started the same way), providing known plaintext	crypto w1
+Asymmetric cryptography is also known as __________ cryptography.	public key	crypto w1
+Who introduced public key cryptography and when?	Whitfield Diffie and Martin Hellman in 1976	crypto w1
+In asymmetric cryptography, what do you encrypt with and what do you decrypt with?	Encrypt with the recipient's public key; decrypt with the corresponding private key	crypto w1
+If a message is encrypted with a private key, how is it decrypted?	Only with the corresponding public key (this is the basis of digital signing)	crypto w1
+What is the big problem with symmetric key encryption that asymmetric solves?	Key exchange — securely sharing the single key (interception risk), plus poor scalability	crypto w1
+What is out-of-band messaging?	Exchanging information (like a key) using a transmission method other than the usual/expected channel	crypto w1
+What is the formula for the number of keys needed for n people using symmetric encryption?	n × (n − 1) / 2 (e.g., 3 people → 3 keys; 1000 people → 499,500 keys)	crypto w1
+What is the main advantage of asymmetric cryptography?	No key distribution problem and better scalability — each person has just one public/private pair instead of a key per communication pair	crypto w1
+What is the main disadvantage of asymmetric cryptography?	It is slow — up to 1000 times slower than symmetric algorithms due to complicated math	crypto w1
+How does hybrid encryption combine symmetric and asymmetric cryptography?	Asymmetric crypto exchanges a symmetric session key (encrypted with the receiver's public key); the fast symmetric key then encrypts the actual message traffic	crypto w1
+In HTTPS/TLS, how is asymmetric cryptography used?	Only once, at the start — to establish the connection and pass the symmetric key; the rest of the session uses the symmetric key	crypto w1
+Which classified British military research preceded public public-key cryptography, and who is credited?	James Ellis conceived it (couldn't implement it); Clifford Cocks created an RSA-like algorithm from Ellis's idea	crypto w1
+RSA was developed at MIT by __________, __________, and __________.	Ron Rivest, Adi Shamir, and Leonard Adleman (Rivest–Shamir–Adleman)	crypto w1
+What one-way function is RSA based on?	Multiplying two large primes is fast; factoring the product back into its primes takes enormously longer (millions/billions of times)	crypto w1
+What is a one-way (forward vs. reverse) function?	A function whose forward computation is fast but whose inverse takes enormously longer (e.g., multiply two primes vs. factor the product)	crypto w1
+Why do larger prime numbers make RSA stronger?	The larger the key/numbers, the greater the gap between forward and inverse computation time — factoring takes far longer	crypto w1
+Is public-key encryption impossible to break?	No — it's just computationally infeasible; with enough processing power it could be broken, so faster future machines may threaten it	crypto w1
+Why does signing a message with your private key prove your identity?	Only your private key can produce something decryptable by your public key — so successful decryption with your public key proves you encrypted it	crypto w1
+How do you both sign a message and keep it confidential (both parties have key pairs)?	Encrypt with your private key (sign), then encrypt the result with the recipient's public key; the recipient decrypts with their private key, then with your public key to verify	crypto w1

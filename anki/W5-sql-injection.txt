@@ -1,0 +1,29 @@
+What does OWASP stand for?	The Open Web Application Security Project	sqli OWASP
+What does the OWASP organization do?	Ranks the top web application vulnerabilities (publishes the OWASP Top 10)	sqli OWASP
+In the OWASP Top 10, which category includes SQL injection?	Injection	sqli OWASP
+Why does SQL injection remain a top vulnerability despite being well known?	Developers don't go back and fix old code and keep reintroducing bad practices, even though it is totally preventable	sqli OWASP
+Which organization publishes a "hall of shame" listing large organizations hit by SQL injection?	OWASP	sqli OWASP
+In OWASP's risk rating, how is SQL injection rated for exploitability, prevalence, detectability, and impact?	Exploitable (easy), widespread (common), easily detectable, and severe impact	sqli OWASP
+In the threat model, what sequence connects a threat agent to business impact?	Threat agent → attack leveraging a security weakness → impact on the business	sqli OWASP
+What does SELECT * FROM users return?	All columns (attributes) for all rows (users) in the users table	sqli OWASP
+Which SQL clause limits which rows a SELECT statement returns?	The WHERE clause	sqli OWASP
+Where does user input from a website text box end up in a dynamically built SQL statement?	Between the single quotes in the WHERE clause (inserted into a variable)	sqli OWASP
+What does a single quote typed into an input field do in a SQL injection attack?	Closes the string in the SQL statement so injected code becomes part of the query	sqli OWASP
+Why does OR 1=1 defeat a WHERE clause?	1=1 is always true, and OR requires only one side to be true, so the whole WHERE clause evaluates true and all rows are returned	sqli OWASP
+In SQL, what is the difference between OR and AND in a WHERE clause?	OR is true if either side is true; AND requires both sides to be true	sqli OWASP
+What is the classic SQL injection string that makes a WHERE clause return all rows?	' OR 1=1--	sqli OWASP
+What does a semicolon do in SQL?	Ends a statement so a new statement can begin right after it (statement stacking)	sqli OWASP
+What is the SQL comment syntax that makes the database ignore the rest of the line?	Double dash: --	sqli OWASP
+Why does an attacker add -- at the end of an injected statement?	To comment out the leftover code (e.g., the dangling closing quote) so the query runs without a syntax error	sqli OWASP
+What does DROP TABLE users do?	Deletes all data in the table AND removes the table itself	sqli OWASP
+In the XKCD "Bobby Tables" comic, what did Robert's name do?	Robert'); DROP TABLE Students;-- — closed the string, dropped the Students table, and commented out the rest	sqli OWASP
+What is SQL injection, in one sentence?	Inserting extra SQL statements into application input so they execute as part of the backend database query	sqli OWASP
+Why must single quotes "balance" when injecting SQL into a value slot?	The injected string is placed inside the query's quotes, so quotes you open must be closed or the statement breaks	sqli OWASP
+Name input characters a programmer should strip or escape to block basic SQL injection	Single quotes, semicolons, double dashes (--), and equals signs	sqli OWASP
+What is a parameterized statement?	A SQL statement where user input is passed as a parameter value that can never be executed as SQL code	sqli OWASP
+How do parameterized statements neutralize injection payloads like ; or --?	setString() forces the input to be treated as a plain value, so special characters lose their SQL meaning	sqli OWASP
+Which website shows how to remediate SQL injection for each programming language?	bobby-tables.com	sqli OWASP
+Besides code fixes, what simple measure reduces exposure to SQL injection on sites like WordPress?	Keep software/plugins up to date (patch known vulnerabilities)	sqli OWASP
+How is a web application vulnerable to SQL injection like a normal software vulnerability?	Both are security weaknesses attackers find (via scans/CVEs) and leverage to attack a system	sqli OWASP
+Why is SQL injection especially dangerous compared to just reading data?	A stacked statement can modify or destroy data (e.g., DROP TABLE), not just reveal it	sqli OWASP
+What lesson does the Bobby Tables comic end on?	Sanitize your database inputs	sqli OWASP

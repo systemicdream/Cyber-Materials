@@ -1,0 +1,87 @@
+What does TCP stand for?	Transmission Control Protocol
+Is TCP/IP a single protocol or a suite of protocols?	A suite of protocols
+In the TCP three-way handshake, what packet does the client first send to the server?	SYN packet
+In the TCP three-way handshake, what packet does the server respond with after receiving the client's SYN?	SYN-ACK packet
+In the TCP three-way handshake, what is the third and final packet?	ACK packet
+What attack exploits the TCP three-way handshake by opening many connections and never sending the final ACK?	SYN flood attack (the server holds half-open connections until it exhausts its ports)
+Why does a SYN flood work against TCP?	The server waits for an ACK after sending SYN-ACK, keeping each half-open connection open for a time; flood enough SYNs and all ports are used up
+Does UDP perform a handshake before sending data?	No — UDP is connectionless and sends data without establishing a connection
+What is the main trade-off of UDP compared to TCP?	Faster communication, but no guarantee that data actually arrives (no connection, no delivery check)
+Why is UDP well suited for audio/video streaming?	Small packet loss doesn't noticeably affect the stream — algorithms adjust for the missing pieces
+What protocol and mechanism is used to test whether a host is up and reachable?	ICMP (Internet Control Message Protocol), e.g., the ping command
+What is an ICMP ping sweep used for?	Scanning a network to discover which servers/hosts are alive and responding
+Why might a security-conscious admin suppress ping responses on servers?	Attackers doing a ping sweep won't discover live hosts; downside: you may think your own server is down when it just doesn't answer pings
+How many bits are in each number group of an IPv4 dotted-decimal address?	8 bits
+How many bits are in a full IPv4 address?	32 bits (8 + 8 + 8 + 8)
+What is the largest value representable by one octet of an IPv4 address?	255 (2^8 total values, ranging 0-255)
+In an IPv4 address with subnet mask 255.255.0.0, how many bits represent the network portion?	16 bits (also written /16 in CIDR notation)
+For the address 172.16.254.1 with network portion 172.16, what is the CIDR notation?	/16 (255.255.0.0 subnet mask)
+If 172.16.254.1 used a /24 subnet, what portion is the host address?	254.1 (the last octets; the first 24 bits are the network)
+How many bits does an IPv6 address use?	128 bits
+What notation is an IPv6 address written in?	Hexadecimal, separated by colons
+Why was IPv6 created?	The IPv4 address space was running out as more hosts, servers, and IoT devices came online
+What built-in security protocol does IPv6 include?	IPSec
+Besides more address space, why hasn't IPv6 taken over completely?	IPv4 is still sufficient thanks to private IP addresses, which can be reused across many organizations via NAT
+What are the three private IPv4 address ranges?	10.0.0.0/8, 172.16.0.0–172.31.255.255, and 192.168.0.0/16
+Can private IP addresses (10.x, 192.168.x, 172.16–31) be seen on the public internet?	No — they are for internal use within an organization only
+What does ICMP stand for?	Internet Control Message Protocol
+Why was the suite of encryption protocols (SSH, TLS, etc.) added to the internet?	The internet was originally built without security in mind; encryption protocols were added so sensitive uses (banking, purchasing) could be protected
+What does SSH stand for?	Secure Shell
+What port does SSH use?	TCP port 22
+What does SCP do?	Securely copies files between a client and a server using the SSH protocol
+What is SFTP and what secures it?	SSH File Transfer Protocol — a secure file transfer protocol running over SSH (port 22)
+What port does HTTPS use?	TCP port 443
+What port does plain unencrypted HTTP use?	Port 80
+What port is used for SMTP over SSL/TLS (encrypted email sending)?	Port 465
+What port is used for LDAPS (LDAP over SSL/TLS)?	Port 636
+What was the original protocol for encrypting web browser traffic, and what replaced it?	SSL was replaced by TLS (Transport Layer Security)
+What does HTTPS use to encrypt HTTP traffic?	TLS (the modern replacement for SSL)
+In the SSL/TLS connection process, what does the browser request from the server first?	That the server identify itself (the server then sends a copy of its SSL certificate)
+What does the SSL certificate contain that the browser uses to encrypt data back to the server?	The server's public key
+What must the browser check the server's certificate against?	Its list of trusted Certificate Authorities (CAs)
+Besides trusting the CA, what does the browser verify about the certificate?	That it is not expired, not revoked, and that the common name matches the site being visited (e.g., google.com)
+How does the web server decrypt the session key the browser sends?	Using the server's private key
+After the handshake, what key encrypts all ongoing browser-server traffic?	The symmetric session key
+What protocol encrypts VPN traffic between security gateways?	IPSec
+What two things does a VPN do for a remote user?	Encrypts traffic point-to-point (to the VPN concentrator) and places the user directly on the remote network (e.g., bypassing an external firewall onto the campus network)
+What port does HTTP use?	Port 80
+What ports does FTP use, and for what?	Port 20 for data and port 21 for control
+What is SFTP's port and relationship to SSH?	Port 22 — an extension of SSH
+What is FTPS?	File Transfer Protocol Secure — FTP secured with TLS (control port 990)
+What is TFTP and what does it run over?	Trivial File Transfer Protocol — runs over UDP port 69
+Why is TFTP good for small files only?	It runs over UDP so lost packets aren't detected; small files have fewer packets to lose, and re-sending a small file is trivial
+What are the two main email retrieval protocols?	IMAP4 and POP3
+What is the key advantage of IMAP4 over POP3?	IMAP4 allows simultaneous access by multiple clients (phone, laptop, etc.) — messages stay on the server
+What is the key characteristic of POP3?	Messages are downloaded to the local computer and removed from the server; good for offline reading but not for multiple clients
+What is the most popular protocol for sending email across the internet?	SMTP (Simple Mail Transfer Protocol)
+What does NAT stand for?	Network Address Translation
+What does a NAT device do to internal private IPs when they reach the internet?	It translates them to the router's single public IP address — the internet never sees the internal addresses
+What security benefit does NAT provide?	Attackers on the internet cannot know the actual IP addresses of internal clients, making it hard to reach them directly
+How does NAT help keep IPv4 usable?	Many internal clients can share a few public IP addresses, conserving the IPv4 address space
+What is a firewall's core purpose?	To block unwanted traffic from the internet from entering a home or business network
+What is a firewall exception?	An explicit rule that names specific traffic allowed through the firewall
+What is the firewall default-deny principle?	Any traffic not explicitly allowed by a rule is blocked
+What is a host-based firewall?	A firewall running directly on a host (server or desktop), controlling what traffic is allowed in/out of that machine
+What is a network-based firewall?	A firewall placed between two internal network segments to block traffic between them (e.g., between the campus network and the data center)
+Where is a border firewall located?	On the edge of the network, blocking unwanted internet traffic from entering the organization
+Can a border firewall block outbound traffic too?	Yes — e.g., blocking users from visiting known malware or phishing sites
+Why do firewalls deny inbound packets claiming a private (e.g., 192.168.x.x) source address from the internet?	Anti-spoofing — private addresses should never appear on the internet, so such packets are spoofed
+In a firewall rule set, where must the final "deny any any" catch-all rule go, and why?	Very last — rules are processed top-down, so an early deny-any rule would block everything, including explicitly allowed traffic
+What happens once a packet matches a firewall rule?	The listed action (allow or deny) is applied and processing of further rules stops for that packet
+What does WAF stand for?	Web Application Firewall (also called an application gateway)
+What attacks does a Web Application Firewall block?	Web application attacks such as cross-site scripting (XSS) and SQL injection
+What did first-generation firewalls do?	Basic packet filtering (static rules like "this IP address can go here")
+What did second-generation firewalls add?	Stateful inspection — watching incoming and outgoing traffic and matching connections
+What is a third-generation firewall?	The Web Application Firewall (WAF)
+What is a next-generation firewall (NGFW)?	A firewall bundling all earlier generations plus much more (inspection, IPS, filtering) into a single appliance
+What does DMZ stand for in network security?	Demilitarized Zone
+What is placed inside a DMZ?	Everything that needs to accept connections from the internet — e.g., web server, email server, public file server
+What belongs on the internal network rather than the DMZ?	Servers that should never be accessed directly from the internet — the sensitive "good stuff" (e.g., HR data, credit card data)
+Why does a DMZ improve security?	It adds another layer — an attacker reaching a DMZ server must still breach a second firewall to reach the internal network
+How can a DMZ web server legitimately reach an internal database?	A specific firewall exception allows only the web server to connect to the database server on the internal network, possibly over limited protocols
+Is there ever a direct connection from the internet to the internal network?	No — only the DMZ touches the internet; internal access is via specific exceptions like DMZ web server to database
+What is a proxy server's main job?	To allow or deny internal computers from connecting to particular internet sites, based on rules for user groups
+How does a proxy server decide which sites a client may visit?	It identifies who is connecting (group/department) and applies rules for that group (e.g., sales blocked from Twitter, admins blocked from Facebook)
+What does UTM stand for?	Unified Threat Management
+What capabilities are bundled into a UTM appliance?	Firewall, antivirus, anti-spyware, anti-spam, monitoring and reporting, intrusion prevention, and content filtering — all in one
+What is the relationship between UTM and next-generation firewalls?	Both are all-in-one devices bundling multiple firewall generations and security features; UTM is the unified threat management appliance name for this approach

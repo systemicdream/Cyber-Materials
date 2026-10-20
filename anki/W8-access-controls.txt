@@ -1,0 +1,47 @@
+What is access control?	The process of protecting a resource so that it is used only by those allowed to use it	accesscontrols w8
+What are the two types of access that access control governs?	Access to data (e.g., database views by role) and access to a system itself (e.g., logging into a phone or laptop)	accesscontrols w8
+What are the four parts of granting access to systems and data (IAAA)?	Identification, Authentication, Authorization, Accountability	accesscontrols w8
+What is identification in the context of access control?	Asserting a user's identity — typically via a username, logon ID, user ID, or account number	accesscontrols w8
+What is authentication in the context of access control?	Challenging a user to verify they really are who they claim to be	accesscontrols w8
+What is accountability in the context of access control?	Tracing actions back to an individual via logs, so the person who made a change can be identified and held responsible	accesscontrols w8
+What is an example of an identification token besides a username?	An ID/badge card (e.g., a swipe card with a unique ID number, or an ATM card)	accesscontrols w8
+Why should a username never include a job function (e.g., "admin123")?	It advertises to attackers which account is the administrator, making it a target for pointed attacks	accesscontrols w8
+Why is user ID issuance difficult over the internet?	You can't physically verify the person, and common verification data (address, phone, SSN) is widely compromised — e.g., the Equifax breach exposed roughly half of US adults' SSNs	accesscontrols w8
+What are the guidelines for user identification?	Secure and documented issuance, naming standards, no sharing of IDs, verifiability, and uniqueness	accesscontrols w8
+What are the three authentication factor types?	Something you know, something you have, something you are	accesscontrols w8
+Give an example of each authentication factor.	Know: password; Have: ATM card or token; Are: fingerprint or iris scan	accesscontrols w8
+Which authentication factor type is generally the weakest?	Something you know (passwords) — users pick memorable ones that are easy to guess	accesscontrols w8
+How does an RSA-style token work?	A physical token or app generates a code from the time, a seed, and an algorithm; the server computes the same code, and the code changes (e.g., every 30 seconds)	accesscontrols w8
+What is a smart card?	A credit-card-sized card with an embedded chip that produces a one-time code for each use, unlike a magnetic strip which sends the same data every swipe	accesscontrols w8
+Why is a chip card more secure than a magnetic-strip swipe?	The chip sends a unique one-time code each transaction, while the strip transmits identical (reusable) card data every time	accesscontrols w8
+Is the NFC (tap-to-pay) signal reusable like a magnetic strip swipe?	No — NFC also generates a one-time code per transaction	accesscontrols w8
+What is the difference between a retina scan and an iris scan?	Retina: blood vessel patterns inside the eyeball; Iris: random patterns of granularity in the colored portion of the eye	accesscontrols w8
+Besides physical traits, what behavioral biometric can authenticate a user?	Typing rhythm — the unique pattern/timing of how a person types their password	accesscontrols w8
+What are the key considerations when deploying a biometric device?	Accuracy, processing speed (should be fast, well under 10 seconds), and user acceptability (no privacy invasion, users comfortable with it)	accesscontrols w8
+In biometrics, what is a false reject rate?	A Type 1 error — a legitimate user is denied access (the system rejects someone who should be accepted)	accesscontrols w8
+In biometrics, what is a false accept rate?	A Type 2 error — an intruder is granted access (the system accepts someone who should be rejected)	accesscontrols w8
+Which biometric error type is most important to minimize in security?	Type 2 (false accept) — letting an intruder in; a false reject only inconveniences a legitimate user	accesscontrols w8
+In biometrics, what is the crossover error?	The total error: false accept rate plus false reject rate added together — the larger it is, the worse the system functions	accesscontrols w8
+Why can't you eliminate both false accepts and false rejects at the same time?	Tightening the system (to cut false accepts) increases false rejects, and loosening it (to cut false rejects) increases false accepts — the two must be balanced	accesscontrols w8
+What makes authentication "two-factor"?	Using two different factor types (e.g., something you know + something you have) — two items from the same category is only one factor used twice	accesscontrols w8
+Is a username plus password one-factor or two-factor?	One-factor — both are "something you know"	accesscontrols w8
+Why is ATM access considered two-factor?	It requires the card (something you have) plus the PIN (something you know)	accesscontrols w8
+What did NIST conclude about two-factor authentication in modern password policies?	Two-factor is now required, especially for anything with admin privileges or access to sensitive data	accesscontrols w8
+What is the difference between authentication and authorization?	Authentication verifies who the user is; authorization determines what the authenticated user is allowed to access	accesscontrols w8
+What are the three access control types used for authorization?	Rule-based, role-based, and content-dependent	accesscontrols w8
+What is rule-based access control, and how is it typically implemented?	Access decided by explicit per-user rules, implemented via an Access Control List (ACL) that lists who can access what	accesscontrols w8
+What is role-based access control?	Access is assigned based on job role: create roles (e.g., "customer service agent"), assign users to roles, and grant systems to the role — easier to manage than per-user rules	accesscontrols w8
+What is content-dependent access control?	Access depends on the data's values — e.g., a database view where a local manager sees only employees in their department, while HR sees all employees	accesscontrols w8
+What is single sign-on (SSO)?	Authenticating once at a central location and gaining access to all your permitted resources without re-logging in (e.g., portal → Blackboard → Gmail)	accesscontrols w8
+What are the pros of single sign-on?	Users log in only once (so one stronger password can be used) and there is a single point to administer/disable user access	accesscontrols w8
+What is the main con of single sign-on?	Once a user's credentials are compromised, the intruder gets the "keys to the kingdom" — access to every service that user can reach	accesscontrols w8
+What is Kerberos?	A widely used, well-tested single sign-on authentication protocol developed at MIT in the 1980s and made public; used by Microsoft Active Directory, macOS, and Linux	accesscontrols w8
+What are the three parties in Kerberos authentication?	The client (user), the resource (e.g., file server), and the Key Distribution Center (KDC / domain controller)	accesscontrols w8
+In Kerberos, how is a user's password used without being transmitted?	It serves as a shared secret: the client encrypts the authenticator with the password, and the KDC uses the stored password to decrypt it — the password never crosses the network	accesscontrols w8
+What is a Ticket Granting Ticket (TGT)?	A ticket the KDC creates after authenticating the user, encrypted with a key only the KDC knows; the client stores it in the Kerberos tray and reuses it to get service tickets	accesscontrols w8
+What is the Kerberos tray?	A special area of memory (never swapped to disk) where the client stores its Kerberos tickets, so they aren't left in persistent storage after a crash	accesscontrols w8
+In Kerberos, how does a file server verify a service ticket without contacting the KDC?	The KDC encrypts the ticket with the file server's own key; the server decrypts it with its password — if it decrypts, it must have been issued by the KDC	accesscontrols w8
+Why can't a client tamper with a Kerberos service ticket?	The ticket is encrypted with the resource server's key, which the client doesn't have — so it can't read or modify the access rights inside	accesscontrols w8
+Why do Kerberos tickets have time limits?	Limited validity (e.g., hours) prevents captured authenticators/tickets from being replayed, and forces periodic revalidation of identity by the KDC	accesscontrols w8
+What are the key security benefits of Kerberos?	The password is never sent across the network, access control is centrally managed at the KDC, and after initial authentication the process is transparent to the user	accesscontrols w8
+What are the three "heads" (elements) of Kerberos, matching its namesake three-headed dog?	Authentication, accounting (authorization), and auditing	accesscontrols w8

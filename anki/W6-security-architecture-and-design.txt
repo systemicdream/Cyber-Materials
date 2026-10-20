@@ -1,0 +1,65 @@
+What is security architecture?	A view of an overall system architecture from a security perspective	secarch w5
+When should security be considered in system design?	From the very beginning — "baked in" at every design step, not bolted on afterward as an afterthought	secarch w5
+What are the layers of system architecture, from the end-user down?	Application programs → utilities → operating system → computer hardware (networking sits beneath the hardware)	secarch w5
+What are the two main reasons for layering a system?	To separate out complexity and to improve security (functions can be placed in the layer that properly handles them)	secarch w5
+In a layered model, how do higher layers accomplish complex functions?	By using the primitive functions of lower layers — hiding complexity and keeping privilege away from the applications	secarch w5
+Which layer should be the only one to directly control the hardware?	The operating system — applications must go through the OS (and utilities) instead of touching hardware or the file system directly	secarch w5
+What is the principle of least privilege as applied to layers?	Each layer gets exactly the privilege it needs to do its job — no more than necessary, no less	secarch w5
+Why should security primitives be placed as low as possible (ideally at the OS level)?	Because access to a lower level lets you change security measures of the levels above it (e.g., OS access lets you alter application-level security)	secarch w5
+What are the two main objectives of an operating system?	Providing the GUI and controlling the system's hardware resources (RAM, CPU, extensions)	secarch w5
+Which OS function keeps logs of who connected, what ran, how long it ran, and who changed privileges?	Accounting	secarch w5
+Besides resource control and accounting, what functions does an operating system perform?	Program creation, program execution, input/output device access, file system access, and error handling (including cleanup after an application crashes)	secarch w5
+What is multitasking?	Several programs run at once, taking turns on the processor — requests queue in a stack in RAM and the CPU pulls and processes one instruction at a time	secarch w5
+What is multithreading?	The OS executes different parts (threads) of programs, using a process's waiting time to run another thread so the processor stays busy	secarch w5
+What is multiprocessing?	Coordinated processing of two or more programs by a system that contains parallel processors	secarch w5
+What is symmetric multiprocessing (SMP)?	Parallel processors that share memory and the I/O bus, with a single copy of the OS in charge of all the processors	secarch w5
+What is massively parallel processing (MPP)?	Each processor has its own memory (its own OS is NOT typical) and data paths let the processors message each other to balance the load	secarch w5
+What is clustering?	Integrating the resources of two or more separate computers (often off-the-shelf PCs linked by standard LAN technology) to work together on one task	secarch w5
+Why did Google build clusters from off-the-shelf computers?	Mass-produced consumer computers are cheaper than custom-built servers, making huge clusters economical	secarch w5
+What is a context switch?	The OS deactivating the currently running process to activate the next one (its state is saved in RAM so it can be restarted later)	secarch w5
+What is storage residue and what causes it?	Leftover data in RAM from a previous process, caused by a context switch where the OS does not scrub RAM before releasing it	secarch w5
+Why is storage residue a security risk?	A later process with lower access could read the leftover RAM data of a higher-privilege process	secarch w5
+What is the time-of-check/time-of-use (TOC/TOU) vulnerability?	The OS validates a parameter, then another process changes its value in the gap between validation and use, so an improper value gets used	secarch w5
+How is the TOC/TOU vulnerability mitigated?	Keep validation and use right next to each other — use the parameter immediately after it is validated	secarch w5
+What are the two CPU execution states?	Non-privileged (user) and privileged (supervisor, e.g., root) — the OS decides whether to grant a request to switch states	secarch w5
+What is a core dump and why is it a security risk?	On a crash, the system's internal state (RAM, program stacks, CPU registers) is written to the hard drive, where unauthorized users may read sensitive data — it must be secured	secarch w5
+What principle should govern how a system fails?	It should fail gracefully and securely	secarch w5
+Why must main memory be protected?	So one user's program can't interfere with the OS or the memory of other users' processes	secarch w5
+What is a buffer overflow?	Writing more data than a memory area's expected size so it spills into an adjacent memory area — the attacker's injected code can then execute with that area's higher privileges	secarch w5
+How do the base and limit registers protect memory?	The base gives the start address of the process's memory and the limit caps how many bytes it may read/write, so it cannot write into another job's space	secarch w5
+Besides base/limit registers, what else protects memory areas?	Privilege modes — each area of memory is assigned the privilege level (e.g., user or privileged) appropriate to it	secarch w5
+What is RAM and what happens to its contents at power-off?	Random access memory — stores program instructions and working data; its contents are lost when the computer is turned off	secarch w5
+What is DRAM?	Dynamic RAM — the formerly most common type; it holds data only briefly and must be dynamically refreshed to retain it	secarch w5
+What is EDO RAM?	Extended Data Output RAM — faster than DRAM, with a look-ahead feature that predicts the next value so it can be read sooner	secarch w5
+What is SDRAM?	Synchronous DRAM — reads/writes are synchronized with the CPU clock speed, speeding transmission and execution of data	secarch w5
+What is DDR SDRAM?	Double Data Rate SDRAM — outputs on both the rising and falling edges of the clock cycle, effectively doubling the read rate	secarch w5
+What is ROM used for, and is it volatile?	Read-only memory stores the part of the OS needed to boot the machine; it is non-volatile (retains data at power-off, aided by a small long-life battery)	secarch w5
+What is flash memory and what security benefits does it bring?	Memory that behaves like a cross between RAM and a hard drive (SSDs, USB drives); with no moving parts it improves availability (no mechanical failure) and integrity (no mis-writes from a broken arm)	secarch w5
+What is a page in memory management?	A set chunk of data that an application writes at a time into its reserved address space (logical addresses managed by the OS, independent of physical hardware addresses)	secarch w5
+What are locked memory pages?	Pages locked in the memory space so they cannot be written out to virtual memory	secarch w5
+What is virtual memory?	Hard drive space used as an extension of RAM when the machine runs out of RAM	secarch w5
+About how long does it take the CPU to access RAM versus virtual memory (hard drive)?	RAM: about 200 nanoseconds; virtual memory: about 12 million nanoseconds (it has to read from a spinning disk)	secarch w5
+What is the security vulnerability of virtual memory?	Swapped-out data remains on the hard drive even after power-off, so attackers who can read the drive can recover data that was supposed to be in RAM	secarch w5
+How can Windows protect its swap file?	Store it on a separate partition that is secured so only the operating system can access it	secarch w5
+How can Linux protect its swap file?	Encrypt the portion of the hard drive holding the swap file so it can't be read even if accessed	secarch w5
+What problem does paging create for encrypted data?	The program must decrypt data to work on it in memory, and if that data is paged to the hard drive it is written unencrypted, exposing it to unauthorized users	secarch w5
+How can an admin stop encrypted data from being paged to disk in plaintext?	Create a memory lock to prevent paging of that encrypted data	secarch w5
+What is a hardware interrupt?	A signal to the CPU that data is now available and it is time to gather it	secarch w5
+What is the interrupt vector table?	A table listing each interrupt — what interrupted it and the address of its handler (e.g., hard drive at address 3h, mouse at address BH)	secarch w5
+What is the "gains interrupts privilege" vulnerability?	If a higher-priority interrupt preempts a running interrupt and the transfer back is not done securely, the interrupted process can gain supervisor status it shouldn't have	secarch w5
+What is interrupt redirection?	Changing the address of an interrupt handler so the OS is redirected to execute malicious code — hard to detect because the original interrupt handler is left unchanged	secarch w5
+Why do viruses abuse hardware interrupts?	To escalate their privileges to the highest level possible, so they can do more damage	secarch w5
+What can happen if an application makes a direct call to hardware instead of proper OS system calls?	If it runs with OS-level privileges while the OS is interrupted, it can access hardware directly, bypassing the OS's privilege checks	secarch w5
+What is the risk of a program reading outside its approved memory space?	It can read data it stored nothing about — e.g., another process's usernames and passwords	secarch w5
+What is the risk when software fails to release resources after use?	A new process can retain those resources and the access that came with them — a route to privilege escalation	secarch w5
+What is the Trusted Computing Base (TCB)?	The set of components that must be trusted to execute properly and within bounds: process activation, execution domain switching, memory protection, and I/O operations	secarch w5
+What is enterprise architecture?	Systematically derived structural descriptions, models, and diagrams of how an enterprise operates — what it does, when, where, how, why, and what it uses to do it	secarch w5
+What is the Zachman Framework?	John Zachman's 1980s framework for defining and capturing an architecture by specifying how, what, where, who, when, and why the entity operates	secarch w5
+In the Zachman approach, why also define behaviors that should NOT be happening?	So that out-of-scope activity — bugs, malicious actors, viruses — can be quickly identified and alerted against a baseline of correct behavior	secarch w5
+What is the goal of a security model?	To prevent the unauthorized disclosure of information	secarch w5
+How does the military security policy control access?	Information (objects) is assigned a classification and people (subjects) a clearance; access is decided by comparing the clearance against the classification	secarch w5
+What are the four military classification levels, lowest to highest?	Unclassified, confidential, secret, top secret	secarch w5
+Under the military security policy, what can a subject read?	Only files at or below their own clearance level — e.g., a confidential-clearance subject cannot read secret or top-secret files	secarch w5
+What is the Bell-LaPadula model?	A cornerstone computer-security model of multilevel security, implemented with a state machine	secarch w5
+What is a state machine model?	A model that defines every state of the system and all possible transitions between states, so the next state is fully determined by the present state and the inputs	secarch w5
+Why does a secure initial state make the whole state machine secure?	Because all transitions lead only to defined states and every transition is secure, every subsequent state is secure regardless of inputs	secarch w5
