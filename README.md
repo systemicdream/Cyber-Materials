@@ -4,6 +4,25 @@
 >
 > **Topics:** (1) OSINT · (2) Cryptography & Password Cracking · (3) Log Analysis · (4) Network Traffic Analysis & Wireless Exploitation · (5) Network Scanning · (6) SQL Injection
 
+## Tool tutorials (beginner walkthroughs)
+
+| # | Tool | File |
+|---|------|------|
+| T1 | nmap | [tutorials/01-nmap.md](tutorials/01-nmap.md) |
+| T2 | Wireshark | [tutorials/02-wireshark.md](tutorials/02-wireshark.md) |
+| T3 | tcpdump | [tutorials/03-tcpdump.md](tutorials/03-tcpdump.md) |
+| T4 | aircrack-ng suite | [tutorials/04-aircrack-ng.md](tutorials/04-aircrack-ng.md) |
+| T5 | John the Ripper | [tutorials/05-john-the-ripper.md](tutorials/05-john-the-ripper.md) |
+| T6 | hashcat | [tutorials/06-hashcat.md](tutorials/06-hashcat.md) |
+| T7 | sqlmap | [tutorials/07-sqlmap.md](tutorials/07-sqlmap.md) |
+| T8 | Burp Suite | [tutorials/08-burp-suite.md](tutorials/08-burp-suite.md) |
+| T9 | Metasploit | [tutorials/09-metasploit.md](tutorials/09-metasploit.md) |
+| T10 | netcat | [tutorials/10-netcat.md](tutorials/10-netcat.md) |
+| T11 | Hydra | [tutorials/11-hydra.md](tutorials/11-hydra.md) |
+| T12 | Gobuster | [tutorials/12-gobuster.md](tutorials/12-gobuster.md) |
+| T13 | Searchsploit | [tutorials/13-searchsploit.md](tutorials/13-searchsploit.md) |
+| T14 | Nikto | [tutorials/14-nikto.md](tutorials/14-nikto.md) |
+
 ## Table of Contents
 
 | # | Topic | File |
