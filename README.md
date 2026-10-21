@@ -1,9 +1,5 @@
 # Cybersecurity 448 — Midterm Study Notes
 
-> **Exam environment:** Kali Linux VM. Notes allowed (long version here on GitHub, paper cheat sheet on desk).
->
-> **Topics:** (1) OSINT · (2) Cryptography & Password Cracking · (3) Log Analysis · (4) Network Traffic Analysis & Wireless Exploitation · (5) Network Scanning · (6) SQL Injection
-
 ## Tool tutorials (beginner walkthroughs)
 
 | # | Tool | File |
