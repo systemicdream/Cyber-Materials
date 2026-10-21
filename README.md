@@ -8,20 +8,20 @@
 
 | # | Tool | File |
 |---|------|------|
-| T1 | nmap | [tutorials/01-nmap.md](tutorials/01-nmap.md) |
-| T2 | Wireshark | [tutorials/02-wireshark.md](tutorials/02-wireshark.md) |
-| T3 | tcpdump | [tutorials/03-tcpdump.md](tutorials/03-tcpdump.md) |
-| T4 | aircrack-ng suite | [tutorials/04-aircrack-ng.md](tutorials/04-aircrack-ng.md) |
-| T5 | John the Ripper | [tutorials/05-john-the-ripper.md](tutorials/05-john-the-ripper.md) |
-| T6 | hashcat | [tutorials/06-hashcat.md](tutorials/06-hashcat.md) |
-| T7 | sqlmap | [tutorials/07-sqlmap.md](tutorials/07-sqlmap.md) |
-| T8 | Burp Suite | [tutorials/08-burp-suite.md](tutorials/08-burp-suite.md) |
-| T9 | Metasploit | [tutorials/09-metasploit.md](tutorials/09-metasploit.md) |
-| T10 | netcat | [tutorials/10-netcat.md](tutorials/10-netcat.md) |
-| T11 | Hydra | [tutorials/11-hydra.md](tutorials/11-hydra.md) |
-| T12 | Gobuster | [tutorials/12-gobuster.md](tutorials/12-gobuster.md) |
-| T13 | Searchsploit | [tutorials/13-searchsploit.md](tutorials/13-searchsploit.md) |
-| T14 | Nikto | [tutorials/14-nikto.md](tutorials/14-nikto.md) |
+| T1 | nmap | [tutorials/01-nmap-network-scanning.md](tutorials/01-nmap-network-scanning.md) |
+| T2 | Wireshark | [tutorials/02-wireshark-traffic-analysis.md](tutorials/02-wireshark-traffic-analysis.md) |
+| T3 | tcpdump | [tutorials/03-tcpdump-traffic-analysis.md](tutorials/03-tcpdump-traffic-analysis.md) |
+| T4 | aircrack-ng suite | [tutorials/04-aircrack-ng-wireless-cracking.md](tutorials/04-aircrack-ng-wireless-cracking.md) |
+| T5 | John the Ripper | [tutorials/05-john-password-cracking.md](tutorials/05-john-password-cracking.md) |
+| T6 | hashcat | [tutorials/06-hashcat-password-cracking.md](tutorials/06-hashcat-password-cracking.md) |
+| T7 | sqlmap | [tutorials/07-sqlmap-web-attacks.md](tutorials/07-sqlmap-web-attacks.md) |
+| T8 | Burp Suite | [tutorials/08-burp-suite-web-attacks.md](tutorials/08-burp-suite-web-attacks.md) |
+| T9 | Metasploit | [tutorials/09-metasploit-exploitation.md](tutorials/09-metasploit-exploitation.md) |
+| T10 | netcat | [tutorials/10-netcat-networking.md](tutorials/10-netcat-networking.md) |
+| T11 | Hydra | [tutorials/11-hydra-password-cracking.md](tutorials/11-hydra-password-cracking.md) |
+| T12 | Gobuster | [tutorials/12-gobuster-web-discovery.md](tutorials/12-gobuster-web-discovery.md) |
+| T13 | Searchsploit | [tutorials/13-searchsploit-vuln-research.md](tutorials/13-searchsploit-vuln-research.md) |
+| T14 | Nikto | [tutorials/14-nikto-web-scanning.md](tutorials/14-nikto-web-scanning.md) |
 
 ## Table of Contents
 

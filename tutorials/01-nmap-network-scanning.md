@@ -48,6 +48,6 @@ nmap --script "discovery,vuln" 10.0.0.5      # categories
 - "All ports closed" → try `-Pn` and/or `-sU` (firewall may drop ping and UDP quietly).
 - Only scan the exam's stated scope.
 
-**Deep dive:** [05-network-scanning.md](../05-network-scanning.md) · feeds [searchsploit](13-searchsploit.md) via `-oX nmap.xml`
+**Deep dive:** [05-network-scanning.md](../05-network-scanning.md) · feeds [searchsploit](13-searchsploit-vuln-research.md) via `-oX nmap.xml`
 
 ← [Back to index](../README.md)

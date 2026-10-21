@@ -41,7 +41,7 @@ Every extra `?a` multiplies the keyspace by ~95 — keep masks tight.
 ## Gotchas
 - "Line length exception" / separators on target hashes → wrong `-m` mode; re-identify.
 - hashcat skips hashes already in its **potfile** (`~/.hashcat/hashcat.potfile`); delete it to redo a run.
-- VM with no GPU → `--force`, or just switch to [John](05-john-the-ripper.md) — same rockyou, less pain.
+- VM with no GPU → `--force`, or just switch to [John](05-john-password-cracking.md) — same rockyou, less pain.
 - Dictionary attack needs the **gzipped rockyou decompressed first**.
 
 **Deep dive:** [02-cryptography-password-cracking.md](../02-cryptography-password-cracking.md) · hash IDs: [08-hash-cheat-table.md](../08-hash-cheat-table.md)

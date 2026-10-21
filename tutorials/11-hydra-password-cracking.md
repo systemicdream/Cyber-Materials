@@ -32,6 +32,6 @@ Three parts inside the quotes, split by `:`:
 - Services with **lockout policies** will lock accounts — check what you're hitting.
 - `-t 4` limits threads; `-V` shows each attempt; `-f` stop on first success.
 - Wrong failure string in `http-post-form` = either every password "works" or none do — the string must match the page's actual error text.
-- ssh/login also possible via [Metasploit](09-metasploit.md) `auxiliary/scanner/ssh/ssh_login`.
+- ssh/login also possible via [Metasploit](09-metasploit-exploitation.md) `auxiliary/scanner/ssh/ssh_login`.
 
 ← [Back to index](../README.md)

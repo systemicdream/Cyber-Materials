@@ -41,6 +41,6 @@ tcpdump -r cap.pcap -A host 10.0.0.5 and port 80
 - You usually need `sudo` (raw socket access).
 - A `-w` file is raw packets — it looks like garbage in `cat`; read it with `-r` or Wireshark.
 
-**Related:** [Wireshark](02-wireshark.md) · [04-network-traffic-wireless.md](../04-network-traffic-wireless.md)
+**Related:** [Wireshark](02-wireshark-traffic-analysis.md) · [04-network-traffic-wireless.md](../04-network-traffic-wireless.md)
 
 ← [Back to index](../README.md)

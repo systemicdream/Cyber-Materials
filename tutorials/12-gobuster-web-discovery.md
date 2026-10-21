@@ -39,6 +39,6 @@ gobuster dir -u http://10.0.0.5 -w /usr/share/wordlists/dirb/common.txt \
 - `ffuf -u http://target.com/FUZZ -w common.txt` — modern, `FUZZ` marks the spot
 - `dirsearch -u http://target.com` — convenient defaults
 
-Tip: after finding a hidden page, note its **status codes and files** — that feeds [sqlmap](07-sqlmap.md), [Burp](08-burp-suite.md), and log-analysis questions (dirbusting in `access.log` = wall of 404s then a 200 — see [03-log-analysis.md](../03-log-analysis.md)).
+Tip: after finding a hidden page, note its **status codes and files** — that feeds [sqlmap](07-sqlmap-web-attacks.md), [Burp](08-burp-suite-web-attacks.md), and log-analysis questions (dirbusting in `access.log` = wall of 404s then a 200 — see [03-log-analysis.md](../03-log-analysis.md)).
 
 ← [Back to index](../README.md)

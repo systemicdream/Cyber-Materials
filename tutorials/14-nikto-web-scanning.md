@@ -31,7 +31,7 @@ nikto -h https://target.com           # or -p 443 with -ssl
 
 ## Gotchas
 - Nikto is **noisy** — it fills `access.log` with requests (its own scans show up in log-analysis questions).
-- It finds *known* issues, not logic bugs: pair with [Gobuster](12-gobuster.md) (hidden paths), [sqlmap](07-sqlmap.md) (injection), and manual [Burp](08-burp-suite.md) testing.
+- It finds *known* issues, not logic bugs: pair with [Gobuster](12-gobuster-web-discovery.md) (hidden paths), [sqlmap](07-sqlmap-web-attacks.md) (injection), and manual [Burp](08-burp-suite-web-attacks.md) testing.
 - "No bugs found" doesn't mean the site is secure — read findings, verify interesting ones by hand.
 - Passive first, active second: [whatweb](../01-osint.md) fingerprints without hammering the server; nikto hammers it.
 

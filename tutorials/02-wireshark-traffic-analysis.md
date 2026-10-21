@@ -38,6 +38,6 @@ FTP/Telnet are even easier: every keystroke (including login) is in cleartext.
 - **Capture filters** (BPF, set *before* capturing): `tcp port 80`, `host 10.0.0.5`.
 - **Display filters** (applied after): `tcp.port == 80`, `ip.addr == 10.0.0.5` — lowercase names, `==` syntax. Don't mix the syntaxes up.
 
-**Deep dive:** [04-network-traffic-wireless.md](../04-network-traffic-wireless.md) · CLI alternative: [tcpdump](03-tcpdump.md)
+**Deep dive:** [04-network-traffic-wireless.md](../04-network-traffic-wireless.md) · CLI alternative: [tcpdump](03-tcpdump-traffic-analysis.md)
 
 ← [Back to index](../README.md)

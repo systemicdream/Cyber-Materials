@@ -45,6 +45,6 @@ john --wordlist=rockyou.txt --rules hashes.txt
 - Wrong format → "no password loaded" or 0 candidates: identify the hash first ([08-hash-cheat-table.md](../08-hash-cheat-table.md)) and set `--format=`.
 - John remembers progress — re-running a finished file shows nothing; `--show` (or a fresh copy of the hash file) reveals results.
 
-**Deep dive:** [02-cryptography-password-cracking.md](../02-cryptography-password-cracking.md) · GPU alternative: [hashcat](06-hashcat.md)
+**Deep dive:** [02-cryptography-password-cracking.md](../02-cryptography-password-cracking.md) · GPU alternative: [hashcat](06-hashcat-password-cracking.md)
 
 ← [Back to index](../README.md)

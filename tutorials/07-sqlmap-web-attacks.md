@@ -21,7 +21,7 @@ The `--dump` step auto-identifies password hashes and cracks them with rockyou.
 | `-u "URL"` | target URL with the parameter |
 | `--forms` | auto-find and test forms on a page |
 | `--data="user=a&pass=b"` | POST parameters (login forms) |
-| `-r request.txt` | replay a saved raw request (from [Burp](08-burp-suite.md)) |
+| `-r request.txt` | replay a saved raw request (from [Burp](08-burp-suite-web-attacks.md)) |
 | `--cookie="PHPSESSID=x"` | authenticated testing |
 | `-D db -T tbl --dump` | dump a specific table |
 | `--all` | grab everything (slow) |

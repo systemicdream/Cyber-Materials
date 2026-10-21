@@ -34,6 +34,6 @@ username=admin&password=test
 - Everything you browse through the proxy is logged (Target → Site map).
 - **OWASP ZAP** is the free/open alternative — same proxy + Repeater concepts, different names.
 
-**Next steps:** [sqlmap](07-sqlmap.md) · manual payloads: [06-sql-injection.md](../06-sql-injection.md)
+**Next steps:** [sqlmap](07-sqlmap-web-attacks.md) · manual payloads: [06-sql-injection.md](../06-sql-injection.md)
 
 ← [Back to index](../README.md)

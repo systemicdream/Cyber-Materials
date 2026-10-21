@@ -36,6 +36,6 @@ less 42315.py        # always read: does it need options? is it a PoC or weaponi
 - Many results are Python/PHP scripts: check the header comments for usage (`python3 exploit.py <target> <port>`).
 - If the box has internet, you can also browse exploit-db.com directly, but offline `searchsploit` always works — even in isolated exam VMs.
 
-**Feeds from:** [nmap](01-nmap.md) (`-sV -oX`) · leads into [Metasploit](09-metasploit.md) (`search` often has the same exploit as a module)
+**Feeds from:** [nmap](01-nmap-network-scanning.md) (`-sV -oX`) · leads into [Metasploit](09-metasploit-exploitation.md) (`search` often has the same exploit as a module)
 
 ← [Back to index](../README.md)
