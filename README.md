@@ -33,3 +33,4 @@
 | 7 | Command Line Survival Kit | [07-cli-survival-kit.md](07-cli-survival-kit.md) |
 | 8 | Hash Identification Cheat Table | [08-hash-cheat-table.md](08-hash-cheat-table.md) |
 | 9 | Lecture Concepts (W1–W8: crypto theory, foundations, architecture, networking, access control) | [09-lecture-concepts.md](09-lecture-concepts.md) |
+| 10 | Practice Exam Scenarios (modeled on the class labs) | [practice-scenarios.md](practice-scenarios.md) |
