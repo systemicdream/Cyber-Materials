@@ -24,7 +24,7 @@ CyberChef (https://gchq.github.io/CyberChef) — browser tool, works offline, "C
 | bcrypt | 60, starts `$2a$` / `$2b$` / `$2y$` | Slow, salted, has cost factor |
 | SHA-512crypt (`$6$`) | starts `$6$` | Linux `/etc/shadow` |
 | MD5crypt (`$1$`) | starts `$1$` | old Linux shadow |
-| AESencrypted formats | `$7$`/`$y$` (yescrypt, modern Linux) |
+| yescrypt (`$y$`) | starts `$y$` | modern Linux shadow |
 
 Use `hashid <hash>` or `hash-identifier` on Kali if unsure.
 

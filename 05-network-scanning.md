@@ -62,7 +62,7 @@ use auxiliary/scanner/ssh/ssh_version
 ```
 
 ## Exam key facts
-- SYN scan = "stealthy" because it never completes the 3-way handshake (sends RST after SYN/ACK).
+- SYN scan = "stealthy" because it never completes the 3-way handshake (sends RST after SYN/ACK). Pair it with the **SYN flood** DoS attack from lecture: flood SYNs and never send the final ACK — the server holds half-open connections until its ports are exhausted (nmap SYN scan shows up in logs as SYN with no follow-up).
 - UDP scan is slow because closed UDP ports should return ICMP unreachable, and lossy.
 - `-sV` identifies *versions* of services — pair with `-O` for full fingerprint.
 - Firewall evidence: "filtered" ports.

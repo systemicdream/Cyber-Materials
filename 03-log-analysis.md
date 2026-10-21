@@ -57,8 +57,7 @@ sort | uniq -c | sort -rn          # THE frequency pattern (memorize!)
 
 Apache/Nginx combined log format (field positions):
 ```
-$1=IP  $3=user  $4=[date/time]  $5-6=request  $7=status...
-# Actually: $1 IP, $4 [time], $6 "METHOD /path HTTP/1.1", $9 status, $10 size
+$1=IP  $2/3=ident/user  $4=[date]  $6="METHOD /path HTTP/1.1"  $9=status  $10=size
 awk '{print $9}' access.log        # status code
 awk '{print $1}' access.log       # source IP
 ```
