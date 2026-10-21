@@ -17,15 +17,3 @@
 | 7 | Command Line Survival Kit | [07-cli-survival-kit.md](07-cli-survival-kit.md) |
 | 8 | Hash Identification Cheat Table | [08-hash-cheat-table.md](08-hash-cheat-table.md) |
 | 9 | Lecture Concepts (W1–W8: crypto theory, foundations, architecture, networking, access control) | [09-lecture-concepts.md](09-lecture-concepts.md) |
-
-## Quick exam-day checklist
-
-- [ ] `gunzip` rockyou.txt FIRST
-- [ ] Identify the hash before choosing a tool/format
-- [ ] nmap scan before exploitation: `nmap -sV -sC -T4 target` (only targets in scope)
-- [ ] aircrack: monitor mode → airodump (channel lock) → deauth → crack
-- [ ] SQLi: `'` → `OR 1=1` → UNION column count → sqlmap if slow
-- [ ] Logs: `grep "Failed password" | awk | sort | uniq -c | sort -rn`
-- [ ] Wireshark filters: `ip.addr ==`, `http`, `eapol`, Follow TCP Stream
-- [ ] Lecture questions: CIA triad, IAAA, SYN flood, Kerberos → [09-lecture-concepts.md](09-lecture-concepts.md)
-- [ ] Read the whole question — hints are usually embedded
