@@ -22,6 +22,7 @@
 | T12 | Gobuster | [tutorials/12-gobuster-web-discovery.md](tutorials/12-gobuster-web-discovery.md) |
 | T13 | Searchsploit | [tutorials/13-searchsploit-vuln-research.md](tutorials/13-searchsploit-vuln-research.md) |
 | T14 | Nikto | [tutorials/14-nikto-web-scanning.md](tutorials/14-nikto-web-scanning.md) |
+| T15 | CyberChef | [tutorials/15-cyberchef-decoding.md](tutorials/15-cyberchef-decoding.md) |
 
 ## Table of Contents
 
