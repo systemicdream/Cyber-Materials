@@ -1,6 +1,6 @@
 # Cybersecurity 448 — Midterm Study Notes
 
-## Tool tutorials (beginner walkthroughs)
+## Tool tutorials
 
 | # | Tool | File |
 |---|------|------|
